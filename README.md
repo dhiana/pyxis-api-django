@@ -15,6 +15,7 @@ Optional:
 ## Getting Started
 
 1. Clone [mysql-box](https://github.com/Juraci/mysql-box)
+
   ```
   $ git clone git@github.com:Juraci/mysql-box.git
   ```
