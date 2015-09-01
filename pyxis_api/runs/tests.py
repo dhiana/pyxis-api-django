@@ -14,3 +14,7 @@ class RunsApiTestCase(TestCase):
     def test_it_should_get_all_runs(self):
         response = self.client.get('/runs/')
         self.assertEqual(response.status_code, 200)
+
+    def test_it_should_allow_no_trailing_slash(self):
+        response = self.client.get('/runs')
+        self.assertEqual(response.status_code, 301)
