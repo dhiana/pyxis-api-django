@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Runs',
+            name='Run',
             fields=[
                 ('id', models.CharField(max_length=36, serialize=False, primary_key=True)),
                 ('skips', models.IntegerField(null=True, blank=True)),
@@ -22,7 +22,6 @@ class Migration(migrations.Migration):
                 ('run_at', models.DateTimeField(null=True, blank=True)),
             ],
             options={
-                'managed': 'False',
                 'db_table': 'runs',
             },
         ),

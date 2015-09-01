@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Runs(models.Model):
+class Run(models.Model):
     id = models.CharField(primary_key=True, max_length=36)
     skips = models.IntegerField(blank=True, null=True)
     fails = models.IntegerField(blank=True, null=True)
@@ -12,4 +12,3 @@ class Runs(models.Model):
 
     class Meta:
         db_table = 'runs'
-        managed = False
