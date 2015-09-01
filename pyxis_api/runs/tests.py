@@ -28,3 +28,4 @@ class RunsApiTestCase(TestCase):
         self.assertEqual(run['passes'], 80)
         self.assertEqual(run['fails'], 12)
         self.assertEqual(run['skips'], 8)
+        self.assertEqual(run['success_percentage'], 80)
