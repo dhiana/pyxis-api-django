@@ -120,3 +120,4 @@ STATIC_URL = '/static/'
 # Customize API requests requirements
 APPEND_SLASH = True
 CORS_ORIGIN_ALLOW_ALL = True
+TASTYPIE_DEFAULT_FORMATS = ['json']
