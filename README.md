@@ -19,7 +19,7 @@ Optional:
   ```
   $ git clone git@github.com:Juraci/mysql-box.git
   ```
-2. Follow it's README
+2. Follow its README
 
 3. Clone [pyxis-api-django](https://github.com/dhiana/pyxis-api-django) (That's me!)
   ```
