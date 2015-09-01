@@ -1,17 +1,11 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.http import HttpResponse
+from runs.api import RunResource
 
-def fake_runs_api(request):
-  response = HttpResponse("")
-  response.status_code = 200
-  return response
+
+run_resource = RunResource()
 
 urlpatterns = [
-    # Examples:
-    # url(r'^$', 'pyxis_api.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
-    url(r'^runs/$', fake_runs_api),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include(run_resource.urls)),
 ]

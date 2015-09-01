@@ -1,3 +1,4 @@
+import json
 from django.test import TestCase
 from runs.models import Run
 
@@ -18,3 +19,12 @@ class RunsApiTestCase(TestCase):
     def test_it_should_allow_no_trailing_slash(self):
         response = self.client.get('/runs')
         self.assertEqual(response.status_code, 301)
+
+    def test_it_should_rerurn_a_collection_of_runs(self):
+        response = self.client.get('/runs/')
+        response_dict = json.loads(response.content)
+        run = response_dict['runs'].pop()
+        self.assertEqual(run['id'], '1234')
+        self.assertEqual(run['passes'], 80)
+        self.assertEqual(run['fails'], 12)
+        self.assertEqual(run['skips'], 8)
