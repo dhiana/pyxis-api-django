@@ -33,3 +33,7 @@ class RunsApiTestCase(TestCase):
     def test_it_should_get_a_specific_run(self):
         response = self.client.get('/runs/1234/')
         self.assertEqual(response.status_code, 200)
+
+    def test_it_should_return_404_when_the_run_is_not_found(self):
+        response = self.client.get('/runs/12342/')
+        self.assertEqual(response.status_code, 404)
