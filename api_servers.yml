@@ -1,0 +1,6 @@
+---
+- hosts: api-node
+  sudo: yes
+
+  roles:
+    - api

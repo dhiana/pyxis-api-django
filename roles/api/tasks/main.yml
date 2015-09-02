@@ -1,0 +1,8 @@
+---
+
+  - apt: update_cache=yes
+
+  - name: ensures that the required packages are present
+    apt: name={{ item }} state=latest
+    with_items:
+      - mysql-client
