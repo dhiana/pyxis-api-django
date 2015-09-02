@@ -29,3 +29,7 @@ class RunsApiTestCase(TestCase):
         self.assertEqual(run['fails'], 12)
         self.assertEqual(run['skips'], 8)
         self.assertEqual(run['success_percentage'], 80)
+
+    def test_it_should_get_a_specific_run(self):
+        response = self.client.get('/runs/1234/')
+        self.assertEqual(response.status_code, 200)
