@@ -1,3 +1,9 @@
+# rspec specific configurations
+.rspec
+
+# Gems
+Gemfile.lock
+
 # Vagrant related stuff
 .vagrant/
 
