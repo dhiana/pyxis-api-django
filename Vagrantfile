@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     api_config.vm.network :private_network, ip: '192.168.33.43'
 
     api_config.vm.provider 'virtualbox' do |v|
-      v.memory = 2048
+      v.memory = 1048
     end
   end
 end
