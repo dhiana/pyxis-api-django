@@ -8,3 +8,4 @@
       - mysql-client
       - python-pip
       - python-dev
+      - libmysqlclient-dev

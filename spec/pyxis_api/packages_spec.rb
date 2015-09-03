@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe 'required packages' do
-  @packages = ['mysql-client', 'python-pip', 'python-dev']
+  @packages = ['mysql-client',
+               'python-pip',
+               'python-dev',
+               'libmysqlclient-dev']
 
   @packages.each do |package|
     describe package(package) do
