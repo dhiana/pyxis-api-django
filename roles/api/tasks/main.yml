@@ -13,3 +13,10 @@
 
   - name: Ensures pyxis-api-django repo is cloned
     git: repo={{ repo }} dest={{ home }}/{{ repo_name }}
+
+  - name: Ensures requirements.txt is installed
+    shell: "pip install -r requirements.txt"
+    register: pip_install_command
+    args:
+      chdir: "{{ home }}/{{ repo_name }}/"
+    failed_when: pip_install_command.rc != 0
