@@ -1,0 +1,3 @@
+home: "/home/vagrant"
+repo: "https://github.com/dhiana/pyxis-api-django.git"
+repo_name: "pyxis-api-django"

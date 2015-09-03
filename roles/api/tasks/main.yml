@@ -9,3 +9,7 @@
       - python-pip
       - python-dev
       - libmysqlclient-dev
+      - git
+
+  - name: Ensures pyxis-api-django repo is cloned
+    git: repo={{ repo }} dest={{ home }}/{{ repo_name }}
