@@ -42,6 +42,15 @@ Optional:
   ```
 
 ## Testing
+
+### Server tests
+```
+$ vagrant up
+$ rake spec
+```
+
+
+### Unit tests
 ```
 $ cd pyxis_api
 $ python manage.py test
