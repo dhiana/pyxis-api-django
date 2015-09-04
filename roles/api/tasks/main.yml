@@ -10,6 +10,7 @@
       - python-dev
       - libmysqlclient-dev
       - git
+      - supervisor
 
   - name: Ensures pyxis-api-django repo is cloned
     git: repo={{ repo }} dest={{ home }}/{{ repo_name }}
@@ -20,3 +21,12 @@
     args:
       chdir: "{{ home }}/{{ repo_name }}/"
     failed_when: pip_install_command.rc != 0
+
+  - name: Ensures supervisor configuration is present
+    copy: src=pyxis_api.conf dest=/etc/supervisor/conf.d/pyxis_api.conf
+
+  - name: Ensures supervisor is configured
+    supervisorctl: name=pyxis_api state=present
+
+  - name: Ensures web application is served
+    supervisorctl: name=pyxis_api state=started
