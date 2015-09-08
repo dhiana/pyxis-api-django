@@ -1,6 +1,8 @@
 ---
 - hosts: api-node
   sudo: yes
+  vars_files:
+    - "environments/{{ env }}/group_vars/main.yml"
 
   roles:
     - api

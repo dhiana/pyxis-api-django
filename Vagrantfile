@@ -11,11 +11,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     api_config.vm.provision 'ansible' do |ansible|
       ansible.playbook = 'api_servers.yml'
-      ansible.limit = 'api-node'
+      ansible.limit = 'all'
       ansible.sudo = true
-      ansible.inventory_path = 'hosts'
+      ansible.inventory_path = 'environments/development/inventory'
       ansible.extra_vars = {
-        ansible_ssh_user: 'vagrant'
+        ansible_ssh_user: 'vagrant',
+        env: 'development'
       }
     end
 
