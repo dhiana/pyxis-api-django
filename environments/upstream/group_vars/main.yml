@@ -1,0 +1,13 @@
+---
+home: "/home/vagrant"
+repo: "https://github.com/dhiana/pyxis-api-django.git"
+repo_name: "pyxis-api-django"
+django_project_name: "pyxis_api"
+django_project_root: "{{ home }}/{{ repo_name }}/{{ django_project_name }}"
+django_settings_root: "{{ django_project_root }}/{{ django_project_name }}"
+django_settings: "{{ django_settings_root }}/settings.py"
+mysql:
+- host: 'logstash.openstack.org'
+  name: 'subunit2sql'
+  user: 'query'
+  password: 'query'
