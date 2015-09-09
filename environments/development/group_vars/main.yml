@@ -7,8 +7,7 @@ django_project_root: "{{ home }}/{{ repo_name }}/{{ django_project_name }}"
 django_settings_root: "{{ django_project_root }}/{{ django_project_name }}"
 django_settings: "{{ django_settings_root }}/settings.py"
 mysql:
-- name: dev_config
-  host: '192.168.33.42'
+- host: '192.168.33.42'
   name: 'sandbox'
   user: 'dashboard'
   password: 'password'
