@@ -53,4 +53,4 @@
     supervisorctl: name=pyxis_api state=present
 
   - name: Ensures web application is served
-    supervisorctl: name=pyxis_api state=started
+    supervisorctl: name=pyxis_api state=restarted
