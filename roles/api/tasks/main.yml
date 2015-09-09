@@ -47,7 +47,27 @@
     failed_when: pip_install_command.rc != 0
 
   - name: Ensures supervisor configuration is present
-    copy: src=pyxis_api.conf dest=/etc/supervisor/conf.d/pyxis_api.conf
+    copy: src=pyxis_api.conf dest={{ supervisor_config }}
+
+  - name: Ensures supervisor configuration points to the correct project directory
+    replace: dest={{ supervisor_config }}
+             regexp="<django_project_root>"
+             replace="{{ django_project_root }}"
+
+  - name: Ensures supervisor configuration has the correct project name
+    replace: dest={{ supervisor_config }}
+             regexp="<django_project_name>"
+             replace="{{ django_project_name }}"
+
+  - name: Ensures supervisor configuration serves the app in the correct port
+    replace: dest={{ supervisor_config }}
+             regexp="<supervisor_port>"
+             replace="{{ supervisor_port }}"
+
+  - name: Ensures supervisor configuration has the correct user
+    replace: dest={{ supervisor_config }}
+             regexp="<supervisor_user>"
+             replace="{{ user }}"
 
   - name: Ensures supervisor is configured
     supervisorctl: name=pyxis_api state=present
