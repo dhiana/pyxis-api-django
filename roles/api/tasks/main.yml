@@ -12,7 +12,7 @@
       - git
       - supervisor
 
-  - name: Ensures pyxis-api-django
+  - name: Ensures pyxis-api-django repository is cloned
     git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes
 
   - name: Ensures the correct host is set for mysql configuration
