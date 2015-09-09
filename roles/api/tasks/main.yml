@@ -12,8 +12,32 @@
       - git
       - supervisor
 
-  - name: Ensures pyxis-api-django repo is cloned
+  - name: Ensures pyxis-api-django
     git: repo={{ repo }} dest={{ home }}/{{ repo_name }}
+
+  - name: Ensures the correct host is set for mysql configuration
+    replace: dest={{ django_settings }}
+             regexp="192\.168\.33\.42"
+             replace="{{ item.host }}"
+    with_items: "{{ mysql }}"
+
+  - name: Ensures the correct database name is set for mysql configuration
+    replace: dest={{ django_settings }}
+             regexp="sandbox"
+             replace="{{ item.name }}"
+    with_items: "{{ mysql }}"
+
+  - name: Ensures the correct database user is set for mysql configuration
+    replace: dest={{ django_settings }}
+             regexp="dashboard"
+             replace="{{ item.user }}"
+    with_items: "{{ mysql }}"
+
+  - name: Ensures the correct database password is set for mysql configuration
+    replace: dest={{ django_settings }}
+             regexp="password"
+             replace="{{ item.password }}"
+    with_items: "{{ mysql }}"
 
   - name: Ensures requirements.txt is installed
     shell: "pip install -r requirements.txt"
