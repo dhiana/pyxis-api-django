@@ -13,7 +13,7 @@
       - supervisor
 
   - name: Ensures pyxis-api-django
-    git: repo={{ repo }} dest={{ home }}/{{ repo_name }}
+    git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes
 
   - name: Ensures the correct host is set for mysql configuration
     replace: dest={{ django_settings }}
