@@ -69,6 +69,15 @@
              regexp="<supervisor_user>"
              replace="{{ user }}"
 
+  - name: Ensures supervisor log path has the correct path
+    replace: dest={{ supervisor_config }}
+             regexp="<supervisor_log_path>"
+             replace="{{ supervisor_log_path }}"
+
+  - name: Ensures supervisor log directory exists
+    file: path={{ supervisor_log_path }} state=directory
+    sudo: no
+
   - name: Ensures supervisor is configured
     supervisorctl: name=pyxis_api state=present
 
