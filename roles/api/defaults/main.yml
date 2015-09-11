@@ -8,4 +8,4 @@ django_settings: "{{ django_settings_root }}/settings.py"
 
 supervisor_config: "/etc/supervisor/conf.d/pyxis_api.conf"
 supervisor_port: "80"
-supervisor_log_path: "/var/log/{{ repo_name }}"
+supervisor_log_path: "{{ home }}/logs/{{ repo_name }}"
