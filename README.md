@@ -36,10 +36,11 @@ Optional:
 #### Using a Vagrant box:
 
 * Provision the vagrant box
+
     ```
     $ vagrant up
     ```
-* Go to (http://192.168.33.43:5000/runs/)[http://192.168.33.43:5000/runs/]
+* Go to [http://192.168.33.43:5000/runs/]
 
 #### Or for local development:
 
@@ -58,11 +59,11 @@ Optional:
     $ cd pyxis_api
     $ python manage.py runserver 5000
     ```
-* Go to (http://localhost:5000/runs/)[http://localhost:5000/runs]
+* Go to [http://localhost:5000/runs]
 
 ### Start a client application
 
-* Follow README at (https://github.com/dhiana/pyxis-app)[https://github.com/dhiana/pyxis-app]
+* Follow README at [https://github.com/dhiana/pyxis-app]
 
 ## Testing
 
