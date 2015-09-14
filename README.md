@@ -14,56 +14,55 @@ Optional:
 
 ## Getting Started
 
-1. Set up a database with [subunit2sql](https://github.com/openstack-infra/subunit2sql) schema
+### Set up a database
 
-1.1. You can use [mysql-box](https://github.com/Juraci/mysql-box):
+* This project expects [subunit2sql](https://github.com/openstack-infra/subunit2sql) schema
+* You can use [mysql-box](https://github.com/Juraci/mysql-box):
+    * Get a dump from a subunit2sql database
+    * Clone the repo
+    
+      ```
+      $ git clone git@github.com:Juraci/mysql-box.git
+      ```
+    * Follow its README
 
-1.1.1. Get a dump from a subunit2sql database
-
-1.1.2. Clone the repo
-
-  ```
-  $ git clone git@github.com:Juraci/mysql-box.git
-  ```
-1.1.3. Follow its README
-
-2. Clone [pyxis-api-django](https://github.com/dhiana/pyxis-api-django) (That's me!)
+### Clone this repo
 
   ```
   $ git clone git@github.com:dhiana/pyxis-api-django.git
   ```
-3. Get this application up and running:
+### Get this application up and running:
   
-3.1. Using a Vagrant box:
+#### Using a Vagrant box:
 
-3.1.1. Provision the vagrant box
-```
-$ vagrant up
-```
-3.1.2. Go to (http://192.168.33.43:5000/runs/)[http://192.168.33.43:5000/runs/]
+* Provision the vagrant box
+    ```
+    $ vagrant up
+    ```
+* Go to (http://192.168.33.43:5000/runs/)[http://192.168.33.43:5000/runs/]
 
-3.2. Or for local development:
+#### Or for local development:
 
-3.2.1. Create virtualenv
+* Create virtualenv
 
-3.2.2. Activate virtualenv
+* Activate virtualenv
 
-3.2.3. Install requirements
+* Install requirements
 
-  ```
-  $ pip install -r requirements.txt
-  ```
-3.2.4. Run server!
+    ```
+    $ pip install -r requirements.txt
+    ```
+* Run server!
 
-  ```
-  $ cd pyxis_api
-  $ python manage.py runserver 5000
-  ```
-3.2.5. Go to (http://localhost:5000/runs/)[http://localhost:5000/runs]
+    ```
+    $ cd pyxis_api
+    $ python manage.py runserver 5000
+    ```
+* Go to (http://localhost:5000/runs/)[http://localhost:5000/runs]
 
-4. Start a client application
+### Start a client application
 
-4.1. Follow README at (https://github.com/dhiana/pyxis-app)[https://github.com/dhiana/pyxis-app]
+* Follow README at (https://github.com/dhiana/pyxis-app)[https://github.com/dhiana/pyxis-app]
 
 ## Testing
 
